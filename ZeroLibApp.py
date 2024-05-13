@@ -99,7 +99,7 @@ class MovieLibWorker(QtCore.QThread):
             self.error.emit(exception)
 
 
-class MovieLibApp(object):
+class ZeroLibApp(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1020, 722)
@@ -767,7 +767,7 @@ if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
     appWindow = QtWidgets.QMainWindow()
-    ui = MovieLibApp()
+    ui = ZeroLibApp()
     ui.setupUi(appWindow)
     appWindow.show()
     sys.exit(app.exec_())
