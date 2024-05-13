@@ -1,0 +1,67 @@
+<mxfile host="Electron" modified="2024-05-13T20:10:13.985Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.2.8 Chrome/112.0.5615.165 Electron/24.2.0 Safari/537.36" etag="A0Q2_cZPQ3pI5DfFA7I4" version="21.2.8" type="device">
+  <diagram name="Page-1" id="5d7acffa-a066-3a61-03fe-96351882024d">
+    <mxGraphModel dx="864" dy="508" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="#ffffff" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="6py_DWtKXm_6gq-2k5ga-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="6py_DWtKXm_6gq-2k5ga-1" target="6py_DWtKXm_6gq-2k5ga-2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="6py_DWtKXm_6gq-2k5ga-8" value="SPARQL Query" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="6py_DWtKXm_6gq-2k5ga-6" vertex="1" connectable="0">
+          <mxGeometry x="-0.023" y="3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6py_DWtKXm_6gq-2k5ga-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="6py_DWtKXm_6gq-2k5ga-1" target="6py_DWtKXm_6gq-2k5ga-2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="6py_DWtKXm_6gq-2k5ga-10" value="Formatted Results" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="6py_DWtKXm_6gq-2k5ga-7" vertex="1" connectable="0">
+          <mxGeometry x="-0.0568" y="3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ySHw2pT1_BUXjWs6XZre-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.016;entryY=0.408;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="6py_DWtKXm_6gq-2k5ga-1" target="ySHw2pT1_BUXjWs6XZre-1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ySHw2pT1_BUXjWs6XZre-3" value="Natual Language" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="ySHw2pT1_BUXjWs6XZre-2" vertex="1" connectable="0">
+          <mxGeometry x="-0.348" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6py_DWtKXm_6gq-2k5ga-1" value="University Web Ontology" style="shape=ellipse;html=1;dashed=0;whiteSpace=wrap;perimeter=ellipsePerimeter;" parent="1" vertex="1">
+          <mxGeometry x="590" y="50" width="130" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="6py_DWtKXm_6gq-2k5ga-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0.235;entryY=0.088;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="6py_DWtKXm_6gq-2k5ga-2" target="6py_DWtKXm_6gq-2k5ga-1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="6py_DWtKXm_6gq-2k5ga-12" value="Natural Language" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="6py_DWtKXm_6gq-2k5ga-11" vertex="1" connectable="0">
+          <mxGeometry x="-0.1881" y="-2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6py_DWtKXm_6gq-2k5ga-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=1;entryDx=0;entryDy=0;" parent="1" source="6py_DWtKXm_6gq-2k5ga-2" target="6py_DWtKXm_6gq-2k5ga-1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="6py_DWtKXm_6gq-2k5ga-15" value="Execution Request" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="6py_DWtKXm_6gq-2k5ga-14" vertex="1" connectable="0">
+          <mxGeometry x="-0.1708" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6py_DWtKXm_6gq-2k5ga-2" value="User" style="html=1;dashed=0;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="300" y="80" width="70" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ySHw2pT1_BUXjWs6XZre-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=0.967;entryY=0.683;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="ySHw2pT1_BUXjWs6XZre-1" target="6py_DWtKXm_6gq-2k5ga-1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ySHw2pT1_BUXjWs6XZre-7" value="SPARQL Query" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="ySHw2pT1_BUXjWs6XZre-6" vertex="1" connectable="0">
+          <mxGeometry x="-0.3287" y="-1" relative="1" as="geometry">
+            <mxPoint x="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ySHw2pT1_BUXjWs6XZre-1" value="LLM" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="940" y="80" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
