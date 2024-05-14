@@ -1,0 +1,960 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/neema/ontologies/2024/4/university/"
+     xml:base="http://www.semanticweb.org/neema/ontologies/2024/4/university/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university">
+        <rdfs:comment xml:lang="en">This is an ontology about university.</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/Admits -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/Admits">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/admittedBy"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Faculty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Student"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/admittedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/admittedBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Student"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Faculty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/employs -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/employs">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/University"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Staff"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/enrolledIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/enrolledIn">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/registeredBy"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Student"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Course"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/hasCores -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/hasCores">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/hasCourse"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Major"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Core"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/hasElectives"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/hasCourse -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/hasCourse">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/Major"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/Minor"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Course"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/hasElectives -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/hasElectives">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/hasCourse"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Minor"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Elective"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/hasFacility -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/hasFacility">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Faculty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Facility"/>
+        <rdfs:comment xml:lang="en">If facility A has facility B that has Facility C -&gt; A has B</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/hasFaculty -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/hasFaculty">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/University"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Faculty"/>
+    </owl:ObjectProperty>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointProperties"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/hasFaculty"/>
+        </owl:members>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/hasMinor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/hasMinor">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Major"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Minor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/hasProfessor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/hasProfessor">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/hasStaff"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Faculty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Professor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/hasProgram -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/hasProgram">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Faculty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Major"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/hasStaff -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/hasStaff">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Faculty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Staff"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/hasStudent -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/hasStudent">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Faculty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Student"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/hasTA -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/hasTA">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/hasStaff"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Faculty"/>
+        <rdfs:comment>Each TA can work for only one faculty (Inverse Functional)</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/peerOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/peerOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Student"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Student"/>
+        <rdfs:comment>A peer of you is someone taking the same class you take.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/registeredBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/registeredBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Course"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Student"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/taughtBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/taughtBy">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/teaches"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Course"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Teaching"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/teaches -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/teaches">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Teaching"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Course"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/hasAge -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/hasAge">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/hasLabel -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/hasLabel">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/hasName"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/hasName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/hasName">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/hasPhonenumber -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/hasPhonenumber">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/joinedOn -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/joinedOn">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/staffID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/staffID">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Staff"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/studentID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/studentID">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Student"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/Administrative -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/Administrative">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Non_teaching"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/Core -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/Core">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Course"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Elective"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/Course -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/Course">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/registeredBy"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">10</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Student"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/Elective -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/Elective">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Course"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/Facility -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/Facility"/>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/Faculty -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/Faculty">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/hasFacility"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Laboratory"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/hasFacility"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Office"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/hasFacility"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Room"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/hasFacility"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Toilet"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/hasStaff"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Administrative"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/hasStaff"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/House_keeping"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/hasStaff"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/IT"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/hasStaff"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Professor"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/hasProgram"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Major"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/hasStaff"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">5</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Staff"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/hasStudent"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">10</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Student"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:comment>Min -&gt; one of each facility (4) , one of each type of staff.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/House_keeping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/House_keeping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Non_teaching"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/IT -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/IT">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Non_teaching"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/Laboratory -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/Laboratory">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Facility"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/Major -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/Major">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/hasCores"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">10</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Core"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/hasMinor"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Minor"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/Minor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/Minor">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/hasElectives"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Elective"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/Non_teaching -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/Non_teaching">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Staff"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/Office -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/Office">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Facility"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/Person -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/Person"/>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/Postgrad_Student -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/Postgrad_Student">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Student"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/Postgrad_TA -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/Postgrad_TA">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Teaching"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/Professor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/Professor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Teaching"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/Room -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/Room">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Facility"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/Staff -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/Staff">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/Student -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/Student">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Person"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/enrolledIn"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">4</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Course"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/enrolledIn"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">6</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Course"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/Teaching -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/Teaching">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Staff"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/Toilet -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/Toilet">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Facility"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/Undergraduate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/Undergraduate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Student"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/University -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/University">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/hasFaculty"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Faculty"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university#3am_Ahmed -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university#3am_Ahmed">
+        <rdf:type rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/House_keeping"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/AbdulRahman -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/AbdulRahman">
+        <rdf:type rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Undergraduate"/>
+        <hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">24</hasAge>
+        <hasLabel>Abduaws</hasLabel>
+        <hasPhonenumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0112312334</hasPhonenumber>
+        <studentID>19P1234</studentID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/AbdulRaouf -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/AbdulRaouf">
+        <rdf:type rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Undergraduate"/>
+        <hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">23</hasAge>
+        <hasLabel>AbdulRaouf</hasLabel>
+        <hasPhonenumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">01141901311</hasPhonenumber>
+        <studentID>19P4442</studentID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/Ain_Shams -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/Ain_Shams">
+        <rdf:type rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/University"/>
+        <employs rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university#3am_Ahmed"/>
+        <employs rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Eman"/>
+        <employs rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Eng_Mohsen"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/Archive_Room -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/Archive_Room">
+        <rdf:type rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Room"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/Big_Data -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/Big_Data">
+        <rdf:type rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Elective"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/ChemistryLab -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/ChemistryLab">
+        <rdf:type rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Laboratory"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/Computer -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/Computer">
+        <rdf:type rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Major"/>
+        <hasCores rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Control_systems"/>
+        <hasCores rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Logic_Design"/>
+        <hasCores rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Math1"/>
+        <hasCores rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Math2"/>
+        <hasMinor rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Data_Science"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/Computer_Lab -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/Computer_Lab">
+        <rdf:type rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Laboratory"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/Computer_Vision -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/Computer_Vision">
+        <rdf:type rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Elective"/>
+        <registeredBy rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Saeed"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/Control_systems -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/Control_systems">
+        <rdf:type rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Core"/>
+        <registeredBy rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Saeed"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/Data_Mining -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/Data_Mining">
+        <rdf:type rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Elective"/>
+        <registeredBy rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Tasneem"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/Data_Science -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/Data_Science">
+        <rdf:type rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Minor"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/Dean_office -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/Dean_office">
+        <rdf:type rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Office"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/Deep_Learning -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/Deep_Learning">
+        <rdf:type rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Elective"/>
+        <registeredBy rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Saeed"/>
+        <registeredBy rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Tasneem"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/Dr_Ensaf -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/Dr_Ensaf">
+        <rdf:type rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Professor"/>
+        <teaches rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Data_Mining"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/Dr_Islam -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/Dr_Islam">
+        <rdf:type rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Person"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/Dr_Mahmoud_Khalil -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/Dr_Mahmoud_Khalil">
+        <rdf:type rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Professor"/>
+        <teaches rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Deep_Learning"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/Eman -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/Eman">
+        <rdf:type rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Postgrad_TA"/>
+        <teaches rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Data_Mining"/>
+        <hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">24</hasAge>
+        <hasLabel>Eman Khaled</hasLabel>
+        <hasPhonenumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0101547895</hasPhonenumber>
+        <staffID>18p4877</staffID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/Eng_Mohsen -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/Eng_Mohsen">
+        <rdf:type rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/IT"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/Faculty_of_Engineering -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/Faculty_of_Engineering">
+        <rdf:type rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Faculty"/>
+        <Admits rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Saeed"/>
+        <hasFacility rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Archive_Room"/>
+        <hasFacility rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/ChemistryLab"/>
+        <hasFacility rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Computer_Lab"/>
+        <hasFacility rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Men_Toilet"/>
+        <hasFacility rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Women_Toilet"/>
+        <hasProfessor rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Dr_Ensaf"/>
+        <hasProfessor rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Dr_Mahmoud_Khalil"/>
+        <hasStudent rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Saeed"/>
+        <hasStudent rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Tasneem"/>
+        <hasTA rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Eman"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/Logic_Design -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/Logic_Design">
+        <rdf:type rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Core"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/Math1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/Math1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Core"/>
+        <registeredBy rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Saeed"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/Math2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/Math2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Core"/>
+        <registeredBy rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Tasneem"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/Men_Toilet -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/Men_Toilet">
+        <rdf:type rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Toilet"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/SFS -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/SFS">
+        <taughtBy rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Dr_Islam"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/Saeed -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/Saeed">
+        <rdf:type rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Undergraduate"/>
+        <enrolledIn rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Computer_Vision"/>
+        <hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">22</hasAge>
+        <hasLabel>Saeed</hasLabel>
+        <hasPhonenumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">011934234</hasPhonenumber>
+        <studentID>19P2342</studentID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/Sameh -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/Sameh">
+        <rdf:type rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Undergraduate"/>
+        <hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">23</hasAge>
+        <hasLabel>sameeehh</hasLabel>
+        <hasPhonenumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0123123234</hasPhonenumber>
+        <studentID>19P8434</studentID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/Student_Affairs -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/Student_Affairs">
+        <rdf:type rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Office"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/Tasneem -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/Tasneem">
+        <rdf:type rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Undergraduate"/>
+        <hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">23</hasAge>
+        <hasLabel>Tasneem Hisham</hasLabel>
+        <hasPhonenumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">01092717546</hasPhonenumber>
+        <studentID>19P4152</studentID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/neema/ontologies/2024/4/university/Women_Toilet -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/Women_Toilet">
+        <rdf:type rdf:resource="http://www.semanticweb.org/neema/ontologies/2024/4/university/Toilet"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/Administrative"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/House_keeping"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/IT"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/Laboratory"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/Office"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/Room"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/neema/ontologies/2024/4/university/Toilet"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+

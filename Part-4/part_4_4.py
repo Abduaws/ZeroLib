@@ -21,7 +21,7 @@ if (URIRef(studentURI), RDF.type, URIRef(studentClassURI)) in uni_onto:
         if p[62:] in ["hasName","hasPhonenumber","studentID","hasAge"]:
             print(p[62:],":",o)
 else:
-    print(Fore.RED + "Student not found!")
-    print(Style.RESET_ALL)
+    print(Fore.RED + "Student not found!" + Fore.RESET)
+    # print(Style.RESET_ALL)
 
 

@@ -2,7 +2,7 @@ from rdflib import Graph, URIRef
 from rdflib.namespace import RDF
 
 uni_onto = Graph()
-uni_onto.parse('data/university_ontology.ttl')
+uni_onto.parse('data/university_ontology_final.ttl')
 
 # print all professor names
 Professor = "http://www.semanticweb.org/neema/ontologies/2024/4/university/Professor"
